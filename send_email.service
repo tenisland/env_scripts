@@ -1,0 +1,15 @@
+[Unit]
+Description=Send email to ned_kim@mentor.com for notification
+After=jupyter.service
+
+[Service]
+Type=simple
+PIDFile=/run/send_email_4_nkim.pid
+User=nkim
+#EnvironmentFile=/home/nkim/python_prep/
+ExecStart=/home/nkim/goMail.sh
+WorkingDirectory=/home/nkim/
+
+[Install]
+WantedBy=multi-user.target
+

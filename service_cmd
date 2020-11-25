@@ -1,0 +1,15 @@
+sudo systemctl status jupyter.service
+
+sudo systemctl enable jupyter.service
+sudo systemctl start jupyter.service
+sudo systemctl stop jupyter.service
+
+sudo systemctl status send_email.service
+
+sudo systemctl enable send_email.service
+sudo systemctl start send_email.service
+sudo systemctl stop send_email.service
+
+sudo systemctl daemon-reload
+
+
