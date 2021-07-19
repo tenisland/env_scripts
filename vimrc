@@ -53,6 +53,16 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" recommendation from https://brunch.co.kr/@kmbmjn95/49
+Plugin 'frazrepo/vim-rainbow'
+"Plugin 'nvie/vim-flake8'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'machakann/vim-highlightedyank'
+Plugin 'osyo-manga/vim-anzu'
+Plugin 'itchyny/vim-cursorword'
+
+" Theme 
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -162,6 +172,11 @@ let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
+"
+" Directory /usr/share/vim/vim81/colors/
+" contains themes/colorschemes
+"colorscheme industry
+colorscheme solarized
 set clipboard=exclude:.*
 
 " Ned custom keymap @ 2020.11.23
