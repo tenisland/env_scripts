@@ -114,6 +114,10 @@ set softtabstop=4
 set expandtab
 set noshiftround
 
+" window size
+set lines=40
+set columns=120
+
 " Cursor motion
 set scrolloff=3
 set backspace=indent,eol,start
@@ -190,12 +194,13 @@ let NERDTreeWinPos = "left"
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_Inc_Winwidth = 0
 let Tlist_Exit_OnlyWindow = 0
-let Tlist_Auto_Open = 0
 
 " Tag list on right
 let Tlist_Use_Right_Window = 1
+let Tlist_Auto_Open = 0
+let Tlist_WinWidth = 32
 
-set tags=/wv/medkr_p/99_nkim/4_kernel/linux-5.9/tags
+"set tags=/wv/medkr_p/99_nkim/4_kernel/linux-5.9/tags
 "" Tag Bar Setting
 nmap <F8> :TagbarToggle<CR>       " F8 Key = Tagbar Toggling
 
@@ -205,6 +210,26 @@ let g:tagbar_width = 35
 "" vim-gutentags
 let g:gutentags_project_root = ['.tag_root']
 let g:gutentags_project_info = []
+
+" ctags db setting 
+" result of ctags -R 
+if filereadable("./tags")
+    set tags=./tags
+endif
+
+" cscope setting https://tear94fall.github.io/lecture/2020/03/03/vim-ctags-cscope-taglist.html
+set csprg=/usr/bin/cscope
+set csto=0
+"set cst
+set nocst
+set nocsverb
+
+if filereadable("./cscope.out")
+    cs add cscope.out
+else
+    "cs add /usr/user/workspace/project/cscope.out
+endif
+set csverb
 
 " Not used now "" YouCompleteMe
 " Not used now let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
